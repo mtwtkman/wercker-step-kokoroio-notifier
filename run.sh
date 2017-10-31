@@ -16,6 +16,8 @@ message=`cat << EOS
 branch is $WERCKER_GIT_BRANCH
 EOS`
 
+echo -e $message
+
 
 api_version=v1
 result=`curl -s -X POST\
