@@ -8,16 +8,13 @@ if [ ! -n "$WERCKER_KOKOROIO_NOTIFIER_CHANNEL_ID" ]; then
   exit 1
 fi
 
+git_url="https://$WERCKER_GIT_DOMAIN/$WERCKER_GIT_OWNER/$WERCKER_GIT_REPOSITORY"
 message=`cat << EOS
-### Build $WERCKER_RESULT\n
-[build_url]($WERCKER_BUILD_URL)\n
-[run_url]($WERCKER_RUN_URL)\n
-[commit](https://$WERCKER_GIT_DOMAIN/$WERCKER_GIT_OWNER/$WERCKER_GIT_REPOSITORY/commits/$WERCKER_GIT_COMMIT)\n
-branch is $WERCKER_GIT_BRANCH
+### Build $WERCKER_RESULT
+[build_url]($WERCKER_BUILD_URL)
+[commit]($git_url/commits/$WERCKER_GIT_COMMIT)
+[branch]($git_url/tree/$WERCKER_GIT_BRANCH)
 EOS`
-
-echo -e $message
-
 
 api_version=v1
 result=`curl -s -X POST\
