@@ -19,7 +19,7 @@ result=`curl -s -X POST\
   -H "X-ACCESS-TOKEN:$WERCKER_KOKOROIO_NOTIFIER_ACCESS_TOKEN" \
   -d "message=$message" \
   "https://kokoro.io/api/$api_version/bot/channels/$WERCKER_KOKOROIO_NOTIFIER_CHANNEL_ID/messages" \
-  --ouput "$WERCKER_STEP_TEMP/result.txt" \
+  --output "$WERCKER_STEP_TEMP/result.txt" \
   --write-out "%{http_code}"`
 
 if [ "$result" = "200" ]; then
