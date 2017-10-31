@@ -3,8 +3,8 @@ if [ ! -n "$WERCKER_KOKOROIO_NOTIFIER_ACCESS_TOKEN" ]; then
   exit 1
 fi
 
-if [ ! -n "$WERCKER_KOKOROIO_NOTIFIER_CALLBACK_URL" ]; then
-  error 'Please set a callback url.'
+if [ ! -n "$WERCKER_KOKOROIO_NOTIFIER_CHANNEL_ID" ]; then
+  error 'Please set a channel_id to notify'
   exit 1
 fi
 
