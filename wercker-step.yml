@@ -1,5 +1,5 @@
 name: kokoroio-notifier
-version: 0.0.4
+version: 0.0.5
 description: Posts Wercker build status to a kokoro.io channel.
 keywords:
   - notification
@@ -11,7 +11,3 @@ properties:
   channel-id:
     type: string
     required: true
-  passed-message:
-    type: string
-  failed-message:
-    type: string
