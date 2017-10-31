@@ -16,9 +16,9 @@ fi
 
 api_version=v1
 result=`curl -s -X POST\
-  -H "X-ACCESS_TOKEN:$WERCKER_KOKOROIO_NOTIFIER_ACCESS_TOKEN" \
-  -d "body=$message" \
-  "https://kokoro.io/api/$api_version/channels/$WERCKER_KOKOROIO_NOTIFIER_CHANNEL_ID/messages" \
+  -H "X-ACCESS-TOKEN:$WERCKER_KOKOROIO_NOTIFIER_ACCESS_TOKEN" \
+  -d "message=$message" \
+  "https://kokoro.io/api/$api_version/bot/channels/$WERCKER_KOKOROIO_NOTIFIER_CHANNEL_ID/messages" \
   --ouput "$WERCKER_STEP_TEMP/result.txt" \
   --write-out "%{http_code}"`
 
