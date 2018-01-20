@@ -1,6 +1,6 @@
 name: kokoroio-notifier
 version: 0.0.10
-description: Posts Wercker build status to a kokoro.io channel.
+description: Posts a Wercker build status to certain kokoro.io channel.
 keywords:
   - notification
   - kokoro.io
