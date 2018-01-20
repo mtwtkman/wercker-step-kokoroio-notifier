@@ -26,7 +26,7 @@ message="$m1 $m2 $m3"
 
 result=`curl -s -X POST\
   -H "X-ACCESS-TOKEN:$WERCKER_KOKOROIO_NOTIFIER_ACCESS_TOKEN" \
-  -d "message=$message" \
+  -d "expand_embed_contents=false&message=$message" \
   "https://kokoro.io/api/$WERCKER_KOKOROIO_NOTIFIER_API_VERSION/bot/channels/$WERCKER_KOKOROIO_NOTIFIER_CHANNEL_ID/messages" \
   --output "$WERCKER_STEP_TEMP/result.txt" \
   --write-out "%{http_code}"`
